@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type Props = {
   title: string;
   children: React.ReactNode;

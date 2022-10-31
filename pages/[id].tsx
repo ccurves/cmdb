@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import Link from "next/link";
 import Breadcrumb from "../components/Breadcrumb/Breadcrumb";
 import Card from "../components/Card/Card";
 import Grid from "../components/Grid/Grid";
@@ -46,16 +47,22 @@ const Movie: NextPage<Props> = ({ movie, cast, directors }) => (
     />
     <Grid className="p-4 max-w-7xl m-auto" title="Actors">
       {cast.map((actor) => (
-        <Card
+        <Link
+          href={`/actor/${actor.id}?movie=${movie.original_title}&movie_id=${movie.id}`}
           key={actor.credit_id}
-          imgUrl={
-            actor.profile_path
-              ? IMAGE_BASE_URL + POSTER_SIZE + actor.profile_path
-              : "/no_image.jpg"
-          }
-          title={actor.name}
-          subtitle={actor.character}
-        />
+        >
+          <div className="cursor-pointer hover:opacity-80 duration-300">
+            <Card
+              imgUrl={
+                actor.profile_path
+                  ? IMAGE_BASE_URL + POSTER_SIZE + actor.profile_path
+                  : "/no_image.jpg"
+              }
+              title={actor.name}
+              subtitle={actor.character}
+            />
+          </div>
+        </Link>
       ))}
     </Grid>
   </main>

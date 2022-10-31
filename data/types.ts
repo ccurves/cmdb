@@ -26,6 +26,7 @@ export type Cast = {
   credit_id: string;
   name: string;
   profile_path: string;
+  id: string;
 };
 
 export type Crew = {
@@ -38,4 +39,13 @@ export type Credits = {
   id: number;
   cast: Cast[];
   crew: Crew[];
+};
+
+export type Actor = {
+  id: number;
+  name: string;
+  biography: string;
+  popularity: number;
+  birthday: string;
+  profile_path: string;
 };
