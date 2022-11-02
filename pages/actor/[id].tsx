@@ -1,9 +1,10 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
 import React from "react";
+import ActorInfo from "../../components/ActorInfo/ActorInfo";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import Header from "../../components/Header/Header";
-import { actorUrl } from "../../config";
+import { actorUrl, IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
 import { basicFetch } from "../../data/fetchFunctions";
 import { Actor } from "../../data/types";
 
@@ -13,7 +14,7 @@ type Props = {
 
 const Actors: NextPage<Props> = ({ actor }) => {
   const router = useRouter();
-  // console.log(router.query.movie);
+
   return (
     <main>
       <Header />
@@ -21,6 +22,17 @@ const Actors: NextPage<Props> = ({ actor }) => {
         title={actor.name}
         movie={router.query.movie}
         movie_id={router.query.movie_id}
+      />
+      <ActorInfo
+        thumbUrl={
+          actor.profile_path
+            ? IMAGE_BASE_URL + POSTER_SIZE + actor.profile_path
+            : "/no_image.jpg"
+        }
+        popularity={actor.popularity}
+        name={actor.name}
+        biography={actor.biography}
+        birthday={actor.birthday}
       />
     </main>
   );
