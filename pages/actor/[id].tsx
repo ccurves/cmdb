@@ -4,17 +4,16 @@ import React from "react";
 import ActorInfo from "../../components/ActorInfo/ActorInfo";
 import Breadcrumb from "../../components/Breadcrumb/Breadcrumb";
 import Header from "../../components/Header/Header";
-import { actorUrl, IMAGE_BASE_URL, POSTER_SIZE } from "../../config";
+import { actorUrl, IMAGE_BASE_URL, movieUrl, POSTER_SIZE } from "../../config";
 import { basicFetch } from "../../data/fetchFunctions";
-import { Actor } from "../../data/types";
+import { Actor, Movie } from "../../data/types";
 
 type Props = {
   actor: Actor;
 };
 
 const Actors: NextPage<Props> = ({ actor }) => {
-  const router = useRouter();
-
+  let router = useRouter();
   return (
     <main>
       <Header />
@@ -42,10 +41,14 @@ export default Actors;
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params?.id as string;
+  // const router = useRouter();
 
   const actorEndpoint: string = actorUrl(id);
+  // const movieEndpoint: string = movieUrl(router.query.movie_id);
 
   const actor = await basicFetch<Actor>(actorEndpoint);
+  // const movie = await basicFetch<Movie>(movieEndpoint);
+  // console.log(movie);
 
   return {
     props: {

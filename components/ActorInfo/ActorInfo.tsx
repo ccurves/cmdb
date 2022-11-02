@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { getAge } from "../../helpers";
 import Thumbnail from "../Thumbnail/Thumbnail";
@@ -42,6 +43,16 @@ const ActorInfo = (props: Props) => {
           </div>
         </div>
       </div>
+      {/* <Image
+        priority
+        placeholder="blur"
+        blurDataURL="/placeholder.jpg"
+        objectFit="cover"
+        objectPosition="center"
+        layout="fill"
+        src={backgroundImgUrl}
+        alt="thumb"
+      /> */}
     </div>
   );
 };
