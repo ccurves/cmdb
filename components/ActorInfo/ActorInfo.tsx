@@ -1,7 +1,10 @@
 import Image from "next/image";
 import React from "react";
+import { BACKDROP_SIZE, IMAGE_BASE_URL } from "../../config";
+import { ActorCredits, Credits } from "../../data/types";
 import { getAge } from "../../helpers";
 import Thumbnail from "../Thumbnail/Thumbnail";
+import ThumbnailGrid from "../ThumbnailGrid/ThumbnailGrid";
 
 type Props = {
   thumbUrl: string;
@@ -9,6 +12,7 @@ type Props = {
   name: string;
   biography: string;
   birthday: string;
+  credits: ActorCredits[];
 };
 
 const ActorInfo = (props: Props) => {
@@ -40,19 +44,24 @@ const ActorInfo = (props: Props) => {
             <div className="mt-8">
               <h3 className="text-lg font-bold">Known for</h3>
             </div>
+            <ThumbnailGrid credits={props.credits} />
           </div>
         </div>
       </div>
-      {/* <Image
+      <Image
         priority
         placeholder="blur"
         blurDataURL="/placeholder.jpg"
         objectFit="cover"
         objectPosition="center"
         layout="fill"
-        src={backgroundImgUrl}
+        src={
+          props.credits[0].poster_path
+            ? IMAGE_BASE_URL + BACKDROP_SIZE + props.credits[0].poster_path
+            : "/no_image.jpg"
+        }
         alt="thumb"
-      /> */}
+      />
     </div>
   );
 };

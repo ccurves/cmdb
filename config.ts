@@ -13,6 +13,8 @@ const creditsUrl = (id?: string) =>
   `${API_URL}movie/${id}/credits?api_key=${API_KEY}`;
 //For actor
 const actorUrl = (id?: string) => `${API_URL}person/${id}?api_key=${API_KEY}`;
+const actorCreditsUrl = (id?: string) =>
+  `${API_URL}person/${id}/movie_credits?api_key=${API_KEY}`;
 
 const IMAGE_BASE_URL: string = "http://image.tmdb.org/t/p/";
 // Sizes: w300, w780, w1280, original
@@ -31,4 +33,5 @@ export {
   movieUrl,
   creditsUrl,
   actorUrl,
+  actorCreditsUrl,
 };

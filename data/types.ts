@@ -49,3 +49,11 @@ export type Actor = {
   birthday: string;
   profile_path: string;
 };
+
+export type ActorCredits = {
+  id: number;
+  character: string;
+  poster_path: string;
+  backdrop_path: string;
+  original_title: string;
+};
