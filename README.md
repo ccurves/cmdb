@@ -204,4 +204,4 @@ Use this space to list resources you find helpful and would like to give credit 
 [typescript]: https://img.shields.io/badge/typescript-35495E?style=for-the-badge&logo=typescript&logoColor=3178C6
 [typescript-url]: https://www.typescriptlang.org/
 [react-query]: https://img.shields.io/badge/react_query-20232A?style=for-the-badge&logo=react-query&logoColor=FF4154
-[react-query-url]: https://www.typescriptlang.org/
+[react-query-url]: https://react-query-v3.tanstack.com/
