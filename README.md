@@ -55,7 +55,13 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-The is a remake of
+A movie application built with Typescript, NextJs, and Tailwind. It also utilizies The Movie DB Api
+
+Users can:
+
+- View current trending movies in the cinemas
+- Search for any moive
+- View details of Moives and Actors
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,7 +82,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-- [node.js]("https://example.com")
+- [node.js](https://nodejs.org/en/)
 - yarn
 
   ```sh
@@ -135,7 +141,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name - [@iamccurves](https://twitter.com/iamccurves) - iamccurves@gmail.com.com
+Simon Covenant- [@iamccurves](https://twitter.com/iamccurves) - iamccurves@gmail.com.com
 
 Project Link: [https://github.com/ccurves/cmdb.git](https://github.com/ccurves/cmdb.git)
 
