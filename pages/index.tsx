@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "../components/Card/Card";
 import Grid from "../components/Grid/Grid";
 import Header from "../components/Header/Header";
@@ -18,7 +18,7 @@ const Home: NextPage = () => {
   const handleScroll = (e: React.UIEvent<HTMLElement>) => {
     const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
 
-    if (scrollHeight - scrollTop === clientHeight) fetchNextPage();
+    if (scrollHeight - scrollTop <= clientHeight * 1.2) fetchNextPage();
   };
   return (
     <main
